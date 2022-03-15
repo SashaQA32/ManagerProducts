@@ -35,6 +35,17 @@ public class Book extends Product {
     }
 
     @Override
+    public boolean matches(String search) {
+        if (getName().contains(search)) {
+            return true;
+        }
+        if (getAuthor().contains(search)) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), author);
     }

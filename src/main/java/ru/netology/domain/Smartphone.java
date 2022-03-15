@@ -26,6 +26,17 @@ public class Smartphone extends Product {
     }
 
     @Override
+    public boolean matches(String search) {
+        if (getName().contains(search)) {
+            return true;
+        }
+        if (getMaker().contains(search)) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

@@ -89,4 +89,24 @@ class ProductManagerTest {
         Product[] actual = manager.searchBy("Something");
         assertArrayEquals(expected,actual);
     }
+
+    @Test
+    void shouldReturnTrueOnBook() {
+        assertTrue(firstBook.matches("Три товарища"));
+    }
+
+    @Test
+    void shouldReturnFalseOnBook() {
+        assertFalse(firstBook.matches("Война и мир"));
+    }
+
+    @Test
+    void shouldReturnTrueOnSmartphone() {
+        assertTrue(thirdSmart.matches("Редми Ноут 10"));
+    }
+
+    @Test
+    void shouldReturnFalseOnSmartphone() {
+        assertFalse(fourthSmart.matches("Нокиа"));
+    }
 }
